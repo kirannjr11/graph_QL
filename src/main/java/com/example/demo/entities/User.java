@@ -16,6 +16,8 @@ public class User {
     private String phone;
     private String password;
 
+
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> orders = new ArrayList<>();
 
@@ -72,6 +74,14 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
 

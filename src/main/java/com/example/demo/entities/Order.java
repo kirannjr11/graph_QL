@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "orders")
+
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,7 +12,6 @@ public class Order {
     private String orderDetail;
     private String address;
     private int price;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -58,4 +58,14 @@ public class Order {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
 }

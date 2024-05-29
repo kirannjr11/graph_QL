@@ -23,9 +23,9 @@ type Query {
 }
 
 type Mutation {
-    createUser(name : String, phone : String, email : String, password : String) : User
-    deleteUser(userId : ID!) : Boolean
+    createUser(name : String, phone : String, email : String, password : String) : User,
+    deleteUser(userId : ID!) : Boolean,
 
-    createOrder(orderDetail : String , address : String, price : Int, userId : Int ): Order
+    createOrder(orderDetail : String , address : String, price : Int, userId : Int! ): Order,
     deleteOrder(orderId : ID!) : Boolean
 }
